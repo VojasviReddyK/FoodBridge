@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge-Connecting Communities,Combating Waste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/new.css">
+    <!-- Bootstrap CSS -->
+  <!-- Favicons -->
+  <link href="../static/assets/img/favicon.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/main.css" rel="stylesheet">
+  <script src="http://maps.google.com/maps/api/js?libraries=places&region=uk&language=en&sensor=true"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>  
+        
+        <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+      <!-- Google Maps API -->
+      <style>
+        body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #4B164C, #cbb4d4);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center the map container */
+.map-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 80vh; /* Adjust height */
+}
+
+/* Map styling */
+#map {
+    height: 500px; /* Adjust map height */
+    width: 80%; /* Adjust map width */
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+h2{
+    color:blanchedalmond;
+    font-size:600%;
+}
+
+        </style>
+</head>
+<body>
+<h2>Hunger Zones</h2>
+<h1>Route on Map</h1>
+<div class="map-container">
+<div id="map"></div></div>
+<script>
+  // Initialize the map
+  var map = L.map('map').setView([20.5937, 78.9629], 5); // Centered on India
+
+  // Load OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Array of locations (replace with actual cities)
+  var locations = [
+    "Suchitra, Hyderabad",
+      "Kukatpally, Hyderabad",
+      "LB Nagar, Hyderabad",
+      "Uppal, Hyderabad",
+      "Secunderabad, Hyderabad",
+      "yapral, Hyderabad"
+  ];
+
+  // Function to get coordinates and add markers
+  function getCoordinatesAndAddMarkers() {
+    locations.forEach(city => {
+      fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${city}`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length > 0) {
+            var coords = [data[0].lat, data[0].lon];
+
+            // Add marker for the city
+            var marker = L.marker(coords).addTo(map);
+
+            // Bind a popup with the city name
+            marker.bindPopup(`<b>${city}</b>`).openPopup();
+          } else {
+            console.error("Location not found: " + city);
+          }
+        })
+        .catch(error => console.error('Error fetching coordinates:', error));
+    });
+  }
+
+  // Load markers after the map is initialized
+  getCoordinatesAndAddMarkers();
+</script>
+
+  
+
+</div>
+</div>
+<br><br><br><br>
+<br><br><br><br>   
+<br><br><br><br>  
+<br><br><br><br>
+</div>
+</section>
+<!-- End Hero Section -->
+
+
+
+
+</body>
+
+</html>

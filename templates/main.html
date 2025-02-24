@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lora:ital,wght@0,400..700;1,400..700&family=Rye&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lora:ital,wght@0,400..700;1,400..700&family=Monoton&family=Rye&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+body {
+    margin-left: 0px;
+    font-family: Arial, sans-serif;
+    background-color: #fef8e6;
+    color: #333;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background:#4B164C;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  
+  .hero .content {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .hero h2{
+    font-size:3rem;
+    text-align:center;
+    color:rgb(244, 245, 245);
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color:cornflowerblue;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .donate {
+    background-color:#DD88CF;
+    color: white;
+    border-top: 5px solid #29b6f6;
+    width:150px;
+    height: 200px;
+    font-family:"DM Serif Display", serif;
+    font-size:20px;
+  }
+  
+  .volunteer {
+    background-color: #DD88CF;
+    color: white;
+    border-top: 5px solid #29b6f6;
+    width:150px;
+    height: 200px;
+    font-family:"DM Serif Display", serif;
+    font-size:20px;
+  }
+  
+  .acceptor {
+    background-color:#DD88CF;
+    color: white;
+    border-top: 5px solid #29b6f6;
+    width:150px;
+    font-family:"DM Serif Display", serif;
+    font-size:20px;
+  }
+  
+  
+  .btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Stats Section */
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 20px;
+    background-color: #fef8e6;
+    text-align: center;
+  }
+  
+  .stat h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .stat p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  
+ .about-section{
+  background:linear-gradient(to right,#7D1C4A, #D17D98);
+  color:white;
+  padding:20px 20px;
+  border-radius:10px;
+  width:80%;
+  margin:20px auto;
+  align-items: center;
+ }
+  
+.about-section h2{
+  text-align:right;
+  color:crimson;
+  font-size:2em;
+}
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4baeb7;
+    color: white;
+  }
+  
+  .highlight{
+    font-weight:bold;
+    color:yellow;
+    cursor:pointer;
+    transition:color 0.3s;
+  }
+
+  .hightlight:hover{
+    color:orange;
+  }
+
+  h1{
+    font-size:500%;
+    font-family:"Rye", serif;
+    text-align:center;
+  }
+    h3{
+      font-family:"Monoton", serif;
+      text-align:center;
+      font-size:2rem;
+    }
+  
+    .container{
+      width:100%;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+
+        <header class="hero">
+        <div class="content">
+            <h1>FOODBRIDGE</h1>
+        <div class="container">
+            <h3>Connecting Communities Combating Waste</h3></div>
+            <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">Join us in reducing food waste and feeding communities in need.</p>
+            <div class="buttons">
+                <a class="btn donate" href="/dl">Donate Now</a>
+                <a class="btn volunteer" href="/vl">Volunteer</a>
+                <a class="btn acceptor" href="al">Acceptor <br>Login</a>
+            </div>
+        </div>
+        </header>
+        <!-- Stats Section -->
+  <section class="stats">
+    <div class="stat">
+      <h2 id="donors-counter">0</h2>
+      <p>Donors</p>
+    </div>
+    <div class="stat">
+      <h2 id="volunteers-counter">0</h2>
+      <p>Volunteers Onboarded</p>
+    </div>
+    <div class="stat">
+      <h2 id="acceptors-counter">0</h2>
+      <p>Acceptors</p>
+    </div>
+  </section>
+
+  <div class="about-section">
+    <div class="about-content">
+      <h2>Bridging Communities, <br>Ending Food Waste</h2>
+      <p style="font-size:1.2rem"> At <b>FoodBridge</b>, we believe in turning surplus into support. Everyday, food goes to waste while families struggle with hunger. We're here to change that by connecting those with extra food to those in need--building  a compassionate, sustainable community.</p>
+      <p style="font-size:1.2rem">Our platform facilitates seamless food donations, ensuring that excess food from restaurants, households, and businesses reaches food banks and shelters efficiently. By reducing food waste and supporting the underprivileged, we aim to create a future where no meal is wasted and no one goes hungry.
+
+        Join us in making a difference—<b>donate, volunteer, or spread the word</b> to help create a world where food is shared, not wasted!
+        </p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Powered by FoodBridge &copy; 2025</p>
+  </footer>
+
+  <script>
+let donors = 0;
+let volunteers = 0;
+let acceptors = 0;
+
+const updateCounters = () => {
+  if (donors < 100) donors += 10;
+  if (volunteers < 20) volunteers += 5;
+  if (acceptors < 50) acceptors += 1;
+
+  document.getElementById("donors-counter").innerText = donors;
+  document.getElementById("volunteers-counter").innerText = volunteers;
+  document.getElementById("acceptors-counter").innerText = acceptors;
+
+  if (donors < 100 || volunteers < 60 || acceptors < 20) {
+    setTimeout(updateCounters, 50);
+  }
+};
+
+updateCounters();</script>
+</body>
+</html>
+            

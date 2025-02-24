@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge-Connecting Communities,Combating Waste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/new.css">
+    <!-- Bootstrap CSS -->
+     <style>
+    body{
+        background: linear-gradient(to right, #4B164C, #cbb4d4);
+    }
+
+    h2{
+        color:#56021F;
+        font-size:50px;
+        font-family:"Bubblegum Sans", serif;
+        margin-top:70px;
+    }
+    
+    label {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+    h1{
+        text-align:center;
+        color:#4B164C;
+        font-family:'Times New Roman', Times, serif;
+    }
+
+
+        input[type="text"], 
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 3px solid #e3d569;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button[type="submit"] {
+            background-color: #56021F;
+            color: white;
+            font-size: 18px;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            width:100%;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #880D2E;
+        }
+        a{
+            text-align:center;
+        }
+
+        .box{
+            border:3px solid #e3d569;
+            text-align:center;
+            width:100%;
+        }
+
+        .container4{
+            margin: 50px auto;
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #f3f3f3c5;
+        }
+
+        .back {
+position:absolute;
+top:20px;
+right:20px;
+display: inline-block;
+padding: 10px 10px;
+background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+border-radius: 10px;
+backdrop-filter: blur(10px); /* Blurred glass effect */
+-webkit-backdrop-filter: blur(10px); /* Safari support */
+border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+color: white; /* Text color */
+font-weight: bold;
+text-decoration: none;
+transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.back:hover {
+background: rgba(255, 255, 255, 0.3);
+border-color: rgba(255, 255, 255, 0.5);
+}</style>
+</head>
+<body>
+    <div class="container4">
+        
+    <h1>Location</h1>
+    <form action="/c2" method="post">
+        <label for="updateLocation">Update Location:</label><br>
+        <input type="text" id="updateLocation" name="updateLocation"><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <a class="back" href="./vh"><h3> Go Back</h3></a>
+</body>
+</html>

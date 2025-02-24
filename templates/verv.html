@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge-Connecting Communities,Combating Waste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/new.css">
+    <!-- Bootstrap CSS -->
+     <style>
+    body{
+        background: linear-gradient(to right, #4B164C, #cbb4d4);
+    }
+    
+    .container{
+                margin: 50px auto;
+                width: 500px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: #f3f3f3c5;
+            }
+    
+            .back {
+    position:absolute;
+    top:20px;
+    right:20px;
+    display: inline-block;
+    padding: 10px 10px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Blurred glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    color: white; /* Text color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.back:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+</style>
+</head>
+<body>
+
+    <div class="container2">
+
+        <center>
+            <h2>Check OTP</h2>
+            <form class="container" action="/check_otp" method="POST">
+                <label for="otp">Enter OTP:</label><br>
+                <input type="text" id="otp" name="otp" required><br><br>
+                <input type="hidden" name="oid" value="{{ oid }}">
+                <input type="submit" value="Check OTP">
+            </form>
+       </center>
+       <a class="back" href="./dh"><h3> Go Back</h3></a>
+      </div>
+    
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge-Connecting Communities,Combating Waste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/new3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+     <title>phone number validation</title>
+     <style>
+         body {
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(to right, #4B164C, #cbb4d4);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    max-width:900px;
+    height:10%;
+    margin: auto;
+    padding: 20px;
+    background:  #441752;
+    padding:20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0, 0.2);
+    margin:50px auto;
+    text-align:center;
+    color:aquamarine;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+h1{
+    color:goldenrod;
+}
+h2{
+    color:chartreuse;
+}
+
+.input-group {
+    margin: 15px 0;
+}
+
+label {
+    display: block;
+    border-color: black;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    border-color: black;
+}
+
+button {
+    background: gold;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #d76d77;
+}
+    </style>
+
+</head>
+<body>
+  
+    <div class="container">
+        <h1>FoodBridge</h1>
+    
+        <form action="./doregister" method="post">
+            <div class="input-group">
+                <label>Username</label>
+                <input type="text" name="username" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" required>
+            </div>
+
+            <div class="input-group">
+                <label>Type</label>
+                <select name="type" required>
+                    <option value="Restaurant">Restaurant</option>
+                    <option value="Individual">Individual</option>
+                    <option value="Organization">Organization</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="text" name="phone" pattern="[0-9]{10}" required placeholder="Enter a 10-digit phone number">
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Address</label>
+                <textarea name="address" required></textarea>
+            </div>
+
+            <button type="submit" id="signup" value="register">Register</button>
+        </form>
+<br>
+        <div>
+            <p>Already have an account <a href="/dl">Sign in</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge-Connecting Communities,Combating Waste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/new.css">
+    <!-- Bootstrap CSS -->
+
+
+      <!-- Google Maps API -->
+      <style>
+        body{
+           background: linear-gradient(to right, #4B164C, #cbb4d4);
+           margin-top:100px;
+        }
+
+       table {
+           width: 60%;
+           border-collapse: collapse;
+           background-color:#ffff99;
+           margin:auto;
+           border: solid #B3D8A8 30px;;
+       }
+
+       th,
+       td {
+           border: 1px solid #ddd;
+           padding: 8px;
+           text-align: left;
+           background-color:#afafaf;
+       }
+
+       td{
+           color:black;
+       }
+
+       th {
+           background-color: #16553d;
+           color:#ddd
+       }
+
+       /* Define colors based on rating */
+       .rate-1 {
+           background-color: #afafaf; /* Example color for rating 1 */
+       }
+
+       .rate-2 {
+           background-color: #afafaf; /* Example color for rating 2 */
+       }
+
+       .rate-3 {
+           background-color: #afafaf; /* Example color for rating 3 */
+       }
+
+       .rate-4 {
+           background-color: #afafaf; /* Example color for rating 4 */
+       }
+
+       .rate-5 {
+           background-color: #afafaf; /* Example color for rating 5 */
+       }
+
+       /* Alternate row color */
+       tr{
+           background-color: #ddd;
+       }
+
+       h2{
+           text-align:center;
+           color:gold;
+           font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+           font-size:100px;
+       }
+
+       .back {
+    position:absolute;
+    top:20px;
+    right:20px;
+    display: inline-block;
+    padding: 10px 10px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Blurred glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    color: white; /* Text color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.back:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+   </style>
+</head>
+<body>
+  
+<h2>Hunger Zones</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Rate</th>
+            <th>Location</th>
+        </tr>
+        {% for zone in locations %}
+        <tr>
+            <td>{{ zone[0] }}</td>
+            <td class="rate-{{ zone[1] }}">{{ zone[1] }}</td>
+            <td><a href="/hmap2?param1={{ zone[0] }}">view location</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a class="back" href="./vh"><h3> Go Back</h3></a>
+</body>
+</html>

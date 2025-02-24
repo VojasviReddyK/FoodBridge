@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge-Connecting Communities,Combating Waste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+   
+    <!-- Bootstrap CSS -->
+     <style>
+        body{
+            background: linear-gradient(to right, #4B164C, #cbb4d4);
+        }
+
+        h2{
+            color:#56021F;
+            font-size:50px;
+            font-family:"Bubblegum Sans", serif;
+            margin-top:70px;
+        }
+        
+        label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        h1{
+            text-align:center;
+        }
+
+
+            input[type="text"], 
+            input[type="number"] {
+                width: 100%;
+                padding: 8px;
+                margin: 5px 0;
+                border: 3px solid #e3d569;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+
+            input[type="submit"] {
+                background-color: #56021F;
+                color: white;
+                font-size: 18px;
+                border: none;
+                padding: 10px 15px;
+                cursor: pointer;
+                border-radius: 5px;
+                width:100%;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #880D2E;
+            }
+            a{
+                text-align:center;
+            }
+
+            .box{
+                border:3px solid #e3d569;
+                text-align:center;
+                width:100%;
+            }
+
+            .container4{
+                margin: 50px auto;
+                width: 500px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 5px;
+                background-color: #f3f3f3c5;
+            }
+
+            .back {
+    position:absolute;
+    top:20px;
+    right:20px;
+    display: inline-block;
+    padding: 10px 10px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 10px;
+    backdrop-filter: blur(10px); /* Blurred glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    color: white; /* Text color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.back:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+        </style>
+</head>
+<body>
+    <h2 style="text-align:center">Hello Donor!</h2>
+    <div class="container4">
+        
+    <h1>Add Item</h1>
+    <form action="/add_item" method="post">
+        <label for="item_name">Item Name:</label><br>
+        <input type="text" id="item_name" name="item_name"><br>
+        <label for="quantity">Quantity:</label><br>
+        <input type="number" id="quantity" name="quantity"><br><br>
+        <label for="unit">Unit:</label>
+        <select class="box" id="unit" name="unit">
+            <option value="kgs">in kgs</option>
+            <option value="mgs">in mgs</option>
+            <option value="litres">in litres</option>
+            <option value="dozens">in dozens</option>
+            <option value="packets">in packets</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Add Item">
+    </form><br>
+    <a class="back" href="./dh"><h3> Go Back</h3></a>
+    </div>
+</body>
+
+</html>
+

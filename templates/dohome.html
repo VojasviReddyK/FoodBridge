@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBridge-Connecting Communities,Combating Waste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/new.css">
+    <!-- Bootstrap CSS -->
+     <style>
+        /* Global Styles */
+/* Global Styles */
+html{
+    margin-bottom:10px;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #4B164C, #cbb4d4);
+    color: #F8F5E9;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    padding: 40px 20px;
+    color: #56021F;
+    margin:0;
+}
+
+.hero h1 {
+    font-size: 36px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Buttons Container */
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 10px;
+}
+
+.toggle-btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: #2c1a47;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    color:white;
+}
+
+.toggle-btn:hover {
+    background: #ff758c;
+    color: white;
+    transform: scale(1.1);
+}
+
+.logout {
+    background: #8b0000;
+    color: white;
+}
+
+.logout:hover {
+    background: darkred;
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    margin-top: 20px;
+}
+.welcome{
+    size:50px;
+}
+
+.hero.gif{
+    width:200px;
+    height:250px;;
+    margin-top:15px;
+    border-radius:10px;
+
+}
+.success-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.success-message {
+    background-color: #E8C547; /* Soft Gold */
+    color: #2C1A47; /* Deep Purple */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.success-message:hover {
+    box-shadow: 0px 6px 15px rgba(232, 197, 71, 0.5);
+    transform: scale(1.05);
+}
+
+p{
+    color:#f0f0f0;
+}
+
+h1{
+    color:#e8c547;
+    font:bold;
+    font-size:100px;
+}
+.size{
+    font-size:50%;
+}
+
+.home{
+    font-size:20px;
+}
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}</style>
+</head>
+<body>
+      
+        <header class="hero">
+            <h1 style="font-size:70px">DONOR</h1>
+            <p style="font-size:40px">"In a world where hunger silently lingers, one simple gesture can illuminate lives with hope."</p>
+
+
+        </header>
+    
+        <div class="buttons-container">
+           <a button class="toggle-btn" id="home-btn" href="/dh">Home</a></button><br>
+           <a button class="toggle-btn" id="hunger-zones-btn" href="/hmap3">Hunger Zones</a></button>
+           <a button class="toggle-btn" id="add-item-btn" href="addi">Add Item</a></button>
+           <a button class="toggle-btn" id="allocate-btn" href="/send">Allocate</a></button>
+           <a button class="toggle-btn" id="view-status-btn" href="/vds">View Status</a></button>
+           <a button class="toggle-btn logout" id="logout-btn" href="/">Logout</a></button>
+        </div>
+        
+        <div class="success-container">
+            <p class="success-message">✅ You Are Successfully Logged In</p>
+        </div>
+        
+        <div>
+            <a class="home"href="/"><p>Return to home page</p></a>
+        </div>
+    </html>
+</body>
+</html>
