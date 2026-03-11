@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FOODBRIDGE
 Connecting Communities, Combating Food Waste.
 
@@ -72,3 +73,6 @@ The React app will typically run on `http://localhost:5173`.
 ## Deployment
 - **Frontend**: Easily deployable to Vercel. Simply connect the GitHub repo and choose the Vite preset.
 - **Backend**: Ready for Render or Heroku. Ensure you add all `.env` variables to your hosting provider's dashboard and set up a MongoDB Atlas cluster URI.
+=======
+# FoodBridge
+>>>>>>> 9e4943fe9609ca7c3121a51e07bc8f76adc276a9
