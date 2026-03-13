@@ -1,92 +1,181 @@
-import { useState, useContext } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
-import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { Utensils, Heart, Truck } from 'lucide-react';
-import { clsx } from "clsx";
+import { useState, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
+import { Button } from "../components/ui/Button";
+import { Input } from "../components/ui/Input";
+import Navbar from "../components/ui/Navbar";
+import { Utensils, Truck, Heart } from "lucide-react";
+import { GoogleLogin } from "@react-oauth/google";
 
 export default function Register() {
-  const [formData, setFormData] = useState({
-    name: '', email: '', password: '', role: 'donor', location: ''
-  });
-  const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  
+
   const { register } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    role: "donor",
+    location: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleRoleSelect = (role) => {
+    setFormData({
+      ...formData,
+      role
+    });
+  };
+
+  const redirectUser = (role) => {
+    if (role === "donor") navigate("/donor-dashboard");
+    else if (role === "volunteer") navigate("/volunteer-dashboard");
+    else navigate("/acceptor-dashboard");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsLoading(true);
-    setError('');
+
+
     try {
+
       const data = await register(formData);
-      if (data.role === 'donor') navigate('/donor-dashboard');
-      else if (data.role === 'volunteer') navigate('/volunteer-dashboard');
-      else navigate('/acceptor-dashboard');
+
+      if (!data) {
+        alert("Registration failed");
+        return;
+      }
+
+      localStorage.setItem("token", data.token);
+
+      redirectUser(data.role);
+
     } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed');
-    } finally {
-      setIsLoading(false);
+
+      const errorMessage =
+        err?.response?.data?.message ||
+        err?.message ||
+        "Registration failed";
+
+      alert(errorMessage);
+
     }
+
+
   };
 
-  const roles = [
-    { id: 'donor', icon: Utensils, label: 'Donor' },
-    { id: 'volunteer', icon: Truck, label: 'Volunteer' },
-    { id: 'acceptor', icon: Heart, label: 'Acceptor' }
-  ];
-
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center py-12 px-6 bg-neutral-50 page-enter">
-      <div className="w-full max-w-lg bg-white rounded-3xl shadow-xl p-8 border border-neutral-100">
-        <h2 className="text-3xl font-bold text-center mb-2">Create an Account</h2>
-        <p className="text-neutral-500 text-center mb-8">Join the platform to make a difference.</p>
+    <> <Navbar />
 
-        {error && <div className="bg-red-50 text-red-500 p-4 rounded-xl mb-6 text-sm">{error}</div>}
+      <div className="min-h-screen flex justify-center items-center bg-neutral-50">
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <Input label="Full Name / Organization" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe or Fresh Foods" />
-          <Input label="Email Address" type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="contact@example.com" />
-          <Input label="Password" type="password" name="password" value={formData.password} onChange={handleChange} required placeholder="••••••••" />
-          <Input label="Location (City or Address)" name="location" value={formData.location} onChange={handleChange} required placeholder="New York, NY" />
-          
-          <div>
-            <label className="text-sm font-medium text-neutral-700 block mb-3">Select your role</label>
-            <div className="grid grid-cols-3 gap-3">
-              {roles.map(r => {
-                const Icon = r.icon;
-                const active = formData.role === r.id;
-                return (
-                  <button
-                    type="button"
-                    key={r.id}
-                    onClick={() => setFormData({ ...formData, role: r.id })}
-                    className={clsx(
-                      "flex flex-col items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all duration-200",
-                      active ? "border-primary bg-primary/5 text-primary" : "border-neutral-200 hover:border-primary/50 text-neutral-500"
-                    )}
-                  >
-                    <Icon size={24} />
-                    <span className="text-sm font-medium">{r.label}</span>
-                  </button>
-                )
-              })}
+        <div className="bg-white p-8 rounded-3xl shadow-xl w-full max-w-lg">
+
+          <h2 className="text-3xl font-bold text-center mb-6">
+            Create Account
+          </h2>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+
+            <Input
+              label="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+
+            <Input
+              label="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+
+            <Input
+              label="Password"
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+
+            <Input
+              label="Location"
+              name="location"
+              value={formData.location}
+              onChange={handleChange}
+              required
+            />
+
+            {/* ROLE SELECTION */}
+            <div className="grid grid-cols-3 gap-4">
+
+              <div
+                onClick={() => handleRoleSelect("donor")}
+                className={`cursor-pointer p-4 rounded-xl border flex flex-col items-center justify-center
+            ${formData.role === "donor"
+                    ? "border-primary bg-primary/10"
+                    : "border-neutral-200 hover:bg-neutral-100"}`}
+              >
+                <Utensils size={28} className="text-primary mb-2" />
+                <p className="text-sm font-medium">Donor</p>
+              </div>
+
+              <div
+                onClick={() => handleRoleSelect("volunteer")}
+                className={`cursor-pointer p-4 rounded-xl border flex flex-col items-center justify-center
+            ${formData.role === "volunteer"
+                    ? "border-primary bg-primary/10"
+                    : "border-neutral-200 hover:bg-neutral-100"}`}
+              >
+                <Truck size={28} className="text-primary mb-2" />
+                <p className="text-sm font-medium">Volunteer</p>
+              </div>
+
+              <div
+                onClick={() => handleRoleSelect("acceptor")}
+                className={`cursor-pointer p-4 rounded-xl border flex flex-col items-center justify-center
+            ${formData.role === "acceptor"
+                    ? "border-primary bg-primary/10"
+                    : "border-neutral-200 hover:bg-neutral-100"}`}
+              >
+                <Heart size={28} className="text-primary mb-2" />
+                <p className="text-sm font-medium">Acceptor</p>
+              </div>
+
             </div>
-          </div>
 
-          <Button type="submit" className="w-full mt-4" disabled={isLoading}>
-            {isLoading ? 'Creating account...' : 'Create Account'}
-          </Button>
-        </form>
+            <Button className="w-full">
+              Create Account
+            </Button>
 
-        <p className="text-center text-neutral-500 mt-8">
-          Already have an account? <Link className="text-primary font-medium hover:underline" to="/login">Log in here</Link>
-        </p>
+          </form>
+
+          <p className="text-center mt-6">
+            Already have an account?
+            <Link to="/login" className="text-primary ml-2">
+              Login
+            </Link>
+          </p>
+
+
+
+        </div>
+
       </div>
-    </div>
+
+    </>
+
+
   );
 }

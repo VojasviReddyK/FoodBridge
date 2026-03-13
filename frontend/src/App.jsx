@@ -5,6 +5,9 @@ import Register from './pages/Register';
 import DonorDashboard from './pages/DonorDashboard';
 import VolunteerDashboard from './pages/VolunteerDashboard';
 import AcceptorDashboard from './pages/AcceptorDashboard';
+import ForgotPassword from "./pages/ForgotPassword";
+import VerifyOTP from "./pages/VerifyOTP";
+import ResetPassword from "./pages/ResetPassword";
 
 function App() {
   return (
@@ -16,10 +19,12 @@ function App() {
         <Route path="/donor-dashboard/*" element={<DonorDashboard />} />
         <Route path="/volunteer-dashboard/*" element={<VolunteerDashboard />} />
         <Route path="/acceptor-dashboard/*" element={<AcceptorDashboard />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/verify-otp" element={<VerifyOTP />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </div>
   );
 }
-<h1 className="text-4xl text-primary font-bold">Tailwind Working</h1>
 
 export default App;
