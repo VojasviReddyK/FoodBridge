@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # FOODBRIDGE
 Connecting Communities, Combating Food Waste.
 
@@ -76,3 +77,6 @@ The React app will typically run on `http://localhost:5173`.
 =======
 # FoodBridge
 >>>>>>> 9e4943fe9609ca7c3121a51e07bc8f76adc276a9
+=======
+# FoodBridge
+>>>>>>> b3fa3c223061400caa881fe5320b55eb99a43585
