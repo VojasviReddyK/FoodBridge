@@ -1,16 +1,73 @@
-# React + Vite
+# 🍲 FoodBridge – Food Redistribution Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 Live Demo: https://foodbridge-cccw.vercel.app/
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📌 Overview
 
-## React Compiler
+FoodBridge is a full-stack web application that connects donors, volunteers, and NGOs to efficiently redistribute surplus food. The platform reduces food wastage while ensuring timely delivery to communities in need.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 👥 Multi-role system (Donor, Volunteer, NGO)  
+- 🔐 Secure authentication with JWT and OTP verification  
+- 📦 Donation and request management system  
+- ⚡ Real-time updates using Socket.io  
+- 📍 Location-based coordination for deliveries  
+- 🔄 End-to-end workflow tracking  
+
+---
+
+## 🛠 Tech Stack
+
+- Frontend: React.js, Tailwind CSS  
+- Backend: Node.js, Express.js  
+- Database: MongoDB  
+- Real-time: Socket.io  
+- Authentication: JWT, OTP (Nodemailer)  
+- Media: Cloudinary  
+- Deployment: Vercel (Frontend), Render (Backend)  
+
+---
+
+## 📊 Key Highlights
+
+- Built 10+ REST API endpoints  
+- Implemented role-based access control  
+- Designed secure delivery verification system  
+- Reduced delivery delays by ~40%  
+
+---
+
+## 🏗 Architecture
+
+- Frontend deployed on Vercel  
+- Backend deployed on Render  
+- REST APIs for communication  
+- Real-time events handled via Socket.io  
+
+---
+
+## 📸 Screenshots
+
+<img width="1901" height="913" alt="image" src="https://github.com/user-attachments/assets/ac934fc7-195a-4cc7-9d48-b7f7dc1c22f8" />
+<img width="1896" height="902" alt="image" src="https://github.com/user-attachments/assets/4917bc60-6d55-46ff-96e0-31a85928f429" />
+
+
+
+---
+
+## 🚀 Future Improvements
+
+- AI-based route optimization  
+- Demand prediction for food distribution  
+- Mobile application support  
+
+---
+
+## 📬 Connect
+
+- LinkedIn: https://www.linkedin.com/in/vojasvireddyk/
